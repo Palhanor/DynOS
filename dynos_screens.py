@@ -1,10 +1,10 @@
 # TODO: Fazer ajustes de design no sistema
-#   Padding no input e botoes
-#   Bordas no buscador
-#   Hover e bordas no selection
-#   Margens entre os elementos
-#   Fazer bordas arredondadas
-#   Cor na barra superior
+#   [] Margens e peddings laterais dos containers com Column
+#   [] Adicionar padding no input e nos botões
+#   [] Remover as bordas dos buscadores
+#   [] Remover o hover e as bordas do selection
+#   [] Fazer bordas arredondadas
+#   [] Modificar a cor da barra superior
 
 import PySimpleGUI as sg
 
@@ -13,12 +13,15 @@ import PySimpleGUI as sg
 # +-----------------------------------------------+
 
 menu_organizador = [
+    [sg.Push(background_color='#2E2E2E')],
     [sg.Text(
         'Menu',
         background_color='#2E2E2E',
         text_color='#D2D2D2',
         font=("Helvetica", 14),
     )],
+    [sg.Push(background_color='#2E2E2E')],
+    [sg.Push(background_color='#2E2E2E')],
     [sg.Button(
         'Reordenador',
         key='-TELA-REORDENAR-',
@@ -27,6 +30,7 @@ menu_organizador = [
         font=("Helvetica", 14),
         size=(14, 1),
     )],
+    [sg.Push(background_color='#2E2E2E')],
     [sg.Button(
         'Renomeador',
         key='-TELA-RENOMEAR-',
@@ -34,10 +38,11 @@ menu_organizador = [
         border_width=0,
         font=("Helvetica", 14),
         size=(14, 1),
-    )],
+    )]
 ]
 
 organizador = [
+    [sg.Push(background_color='#2E2E2E')],
     [sg.Text(
         'Diretório',
         background_color='#2E2E2E',
@@ -94,7 +99,6 @@ organizador = [
         expand_x=True,
         font=("Helvetica", 14),
         pad=(8, 8),
-        # do_not_clear=False,
     )],
     [sg.Text(
         'Formatos selecionados',
@@ -110,7 +114,6 @@ organizador = [
         border_width=0,
         font=("Helvetica", 14),
         pad=(8, 8),
-        # do_not_clear=False,
     )],
     [sg.Text(
         'Arquivos excedentes',
@@ -139,6 +142,7 @@ organizador = [
 ]
 
 exibicao_organizador = [
+    [sg.Push(background_color='#2E2E2E')],
     [sg.Text(
         'Arquivos selecionados',
         background_color='#2E2E2E',
@@ -152,6 +156,8 @@ exibicao_organizador = [
             button_color='#4F4F4F',
             border_width=0,
         )],
+    [sg.Push(background_color='#2E2E2E')],
+    [sg.Push(background_color='#2E2E2E')],
     [sg.Multiline(
         size=(140, 380),
         background_color='#4F4F4F',
@@ -172,12 +178,15 @@ exibicao_organizador = [
 # +-----------------------------------------------+
 
 menu_renomeador = [
+    [sg.Push(background_color='#2E2E2E')],
     [sg.Text(
         'Menu',
         background_color='#2E2E2E',
         text_color='#D2D2D2',
         font=("Helvetica", 14),
     )],
+    [sg.Push(background_color='#2E2E2E')],
+    [sg.Push(background_color='#2E2E2E')],
     [sg.Button(
         'Reordenador',
         key='-TELA-REORDENAR-',
@@ -186,6 +195,7 @@ menu_renomeador = [
         font=("Helvetica", 14),
         size=(14, 1),
     )],
+    [sg.Push(background_color='#2E2E2E')],
     [sg.Button(
         'Renomeador',
         key='-TELA-RENOMEAR-',
@@ -197,6 +207,7 @@ menu_renomeador = [
 ]
 
 renomeador = [
+    [sg.Push(background_color='#2E2E2E')],
     [sg.Text(
         'Diretório',
         background_color='#2E2E2E',
@@ -269,6 +280,7 @@ renomeador = [
         font=("Helvetica", 14),
         pad=(8, 8),
     )],
+    [sg.Push(background_color='#2E2E2E')],
     [sg.Push(background_color='#2E2E2E'),
      sg.Button(
          'Renomear',
@@ -281,6 +293,7 @@ renomeador = [
 ]
 
 exibicao_renomeador = [
+    [sg.Push(background_color='#2E2E2E')],
     [sg.Text(
         'Arquivos selecionados',
         background_color='#2E2E2E',
@@ -294,6 +307,8 @@ exibicao_renomeador = [
             button_color='#4F4F4F',
             border_width=0,
         )],
+    [sg.Push(background_color='#2E2E2E')],
+    [sg.Push(background_color='#2E2E2E')],
     [sg.Multiline(
         size=(140, 380),
         background_color='#4F4F4F',
