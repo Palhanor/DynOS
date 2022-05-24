@@ -1,4 +1,5 @@
-# TODO: Impedir que o sistema quebre quando roda sem diretório ou arquivos alvos (visualizar e reordenar)
+
+# TODO: Automatizar o sistema de visualização de arquivos
 
 import os
 import re

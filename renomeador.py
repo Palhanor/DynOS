@@ -4,13 +4,13 @@
 import os
 import re
 import PySimpleGUI as sg
-from dynos_screens import renomeador, exibicao
+from dynos_screens import renomeador, exibicao_renomeador
 from dynos_defs import ajusta_formatos, arquivos_selecionados
 
 layout = [
     [
         sg.Column(renomeador, background_color='#2E2E2E', expand_x=True, expand_y=True, key='-SCREEN-'),
-        sg.Column(exibicao, background_color='#2E2E2E', expand_x=True, expand_y=True),
+        sg.Column(exibicao_renomeador, background_color='#2E2E2E', expand_x=True, expand_y=True),
     ]
 ]
 
@@ -42,29 +42,28 @@ while True:
     pode_visualizar = diretorio or arquivos
     pode_reordenar = pode_visualizar and nome_valido
 
+    contador = 1
+
     if event == sg.WINDOW_CLOSED:
         break
 
     elif event == '-VISUALIZAR-':
         window.FindElement('-SAIDA-').Update('')
         for arquivo in lista_arquivos_selecionados:
-            formato = os.path.splitext(arquivo)[1]
-            rota = os.path.join(diretorio_arquivos_selecionados, arquivo)
-            if os.path.isfile(rota) and (formato.lower() in formatos or len(formatos) == 0):
-                print(arquivo)
+            print(arquivo)
 
     elif event == '-RENOMEAR-' and nome_valido:
-        contador = 1
         arquivos_diretorio = os.listdir(diretorio_arquivos_selecionados)
         for arquivo in arquivos_diretorio:
-            if nome == '':
-                nome = re.sub(r'^.*/', '', diretorio_arquivos_selecionados)
-            formato = os.path.splitext(arquivo)[1]
-            rota = os.path.join(diretorio_arquivos_selecionados, arquivo)
-            new_file = f'{nome} #{str(contador).zfill(3)}' + formato
-            new_path = os.path.join(diretorio_arquivos_selecionados, new_file)
-            os.rename(rota, new_path)
-            contador += 1
+            if arquivo in lista_arquivos_selecionados:
+                if nome == '':
+                    nome = re.sub(r'^.*/', '', diretorio_arquivos_selecionados)
+                formato = os.path.splitext(arquivo)[1]
+                rota = os.path.join(diretorio_arquivos_selecionados, arquivo)
+                new_file = f'{nome} #{str(contador).zfill(3)}' + formato
+                new_path = os.path.join(diretorio_arquivos_selecionados, new_file)
+                os.rename(rota, new_path)
+                contador += 1
 
         window.FindElement('-SAIDA-').Update('')
 

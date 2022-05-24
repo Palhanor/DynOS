@@ -1,18 +1,19 @@
 # TODO: Adicionar um campo com a pasta de destino dos arquivos
 #   Se o nome for vazio, entra direto na pasta de destino
 #   Caso tenha nome, a pasta é criada nessa pasta de destino
+#   Usar números negativos para voltar na rota e extair os dados
 
 import os
 import re
 import shutil
 import PySimpleGUI as sg
-from dynos_screens import organizador, exibicao
+from dynos_screens import organizador, exibicao_organizador
 from dynos_defs import ajusta_formatos, arquivos_selecionados, adiciona_outros
 
 layout = [
     [
         sg.Column(organizador, background_color='#2E2E2E', expand_x=True, expand_y=True, key='-SCREEN-'),
-        sg.Column(exibicao, background_color='#2E2E2E', expand_x=True, expand_y=True),
+        sg.Column(exibicao_organizador, background_color='#2E2E2E', expand_x=True, expand_y=True),
     ]
 ]
 
@@ -28,7 +29,6 @@ window = sg.Window(
     titlebar_text_color='#D2D2D2',
     font=("Helvetica", 12),
 )
-
 
 while True:
     event, values = window.read()

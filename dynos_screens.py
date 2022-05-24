@@ -1,4 +1,3 @@
-# TODO: Criar um sistema de menu funcional
 # TODO: Fazer ajustes de design no sistema
 #   Padding no input e botoes
 #   Bordas no buscador
@@ -10,38 +9,10 @@
 import PySimpleGUI as sg
 
 # +-----------------------------------------------+
-# |              COMPONENTES GERAIS               |
+# |                 ORGANIZADOR                   |
 # +-----------------------------------------------+
 
-exibicao = [
-    [sg.Text(
-        'Arquivos selecionados',
-        background_color='#2E2E2E',
-        text_color='#D2D2D2',
-        font=("Helvetica", 14),
-    ),
-        sg.Push(background_color='#2E2E2E'),
-        sg.Button(
-            'Visualizar',
-            key='-VISUALIZAR-',
-            button_color='#4F4F4F',
-            border_width=0,
-        )],
-    [sg.Output(
-        size=(140, 380),
-        background_color='#4F4F4F',
-        expand_x=False,
-        expand_y=False,
-        key='-SAIDA-',
-        font=("Helvetica", 14),
-        text_color='#FFFFFF',
-        sbar_arrow_color='#FFFFFF',
-        sbar_background_color='#202020',
-        sbar_trough_color='#4F4F4F',
-    )]
-]
-
-menu = [
+menu_organizador = [
     [sg.Text(
         'Menu',
         background_color='#2E2E2E',
@@ -65,11 +36,6 @@ menu = [
         size=(14, 1),
     )],
 ]
-# sg.Column(menu, size=(175, 380), background_color='#2E2E2E', expand_y=True, expand_x=True),
-
-# +-----------------------------------------------+
-# |                 ORGANIZADOR                   |
-# +-----------------------------------------------+
 
 organizador = [
     [sg.Text(
@@ -172,9 +138,63 @@ organizador = [
      )]
 ]
 
+exibicao_organizador = [
+    [sg.Text(
+        'Arquivos selecionados',
+        background_color='#2E2E2E',
+        text_color='#D2D2D2',
+        font=("Helvetica", 14),
+    ),
+        sg.Push(background_color='#2E2E2E'),
+        sg.Button(
+            'Visualizar',
+            key='-VISUALIZAR-',
+            button_color='#4F4F4F',
+            border_width=0,
+        )],
+    [sg.Multiline(
+        size=(140, 380),
+        background_color='#4F4F4F',
+        expand_x=False,
+        expand_y=False,
+        key='-SAIDA-ORDENADOR-',
+        font=("Helvetica", 14),
+        text_color='#FFFFFF',
+        sbar_arrow_color='#FFFFFF',
+        sbar_background_color='#202020',
+        sbar_trough_color='#4F4F4F',
+    )]
+]
+
+
 # +-----------------------------------------------+
 # |                 RENOMEADOR                    |
 # +-----------------------------------------------+
+
+menu_renomeador = [
+    [sg.Text(
+        'Menu',
+        background_color='#2E2E2E',
+        text_color='#D2D2D2',
+        font=("Helvetica", 14),
+    )],
+    [sg.Button(
+        'Reordenador',
+        key='-TELA-REORDENAR-',
+        button_color='#1879BB',
+        border_width=0,
+        font=("Helvetica", 14),
+        size=(14, 1),
+    )],
+    [sg.Button(
+        'Renomeador',
+        key='-TELA-RENOMEAR-',
+        button_color='#0D6358',
+        border_width=0,
+        font=("Helvetica", 14),
+        size=(14, 1),
+    )],
+]
 
 renomeador = [
     [sg.Text(
@@ -258,4 +278,32 @@ renomeador = [
          font=("Helvetica", 14),
          size=(10, 1),
      )]
+]
+
+exibicao_renomeador = [
+    [sg.Text(
+        'Arquivos selecionados',
+        background_color='#2E2E2E',
+        text_color='#D2D2D2',
+        font=("Helvetica", 14),
+    ),
+        sg.Push(background_color='#2E2E2E'),
+        sg.Button(
+            'Visualizar',
+            key='-VISUALIZAR-',
+            button_color='#4F4F4F',
+            border_width=0,
+        )],
+    [sg.Multiline(
+        size=(140, 380),
+        background_color='#4F4F4F',
+        expand_x=False,
+        expand_y=False,
+        key='-SAIDA-RENOMEADOR-',
+        font=("Helvetica", 14),
+        text_color='#FFFFFF',
+        sbar_arrow_color='#FFFFFF',
+        sbar_background_color='#202020',
+        sbar_trough_color='#4F4F4F',
+    )]
 ]
