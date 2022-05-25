@@ -1,13 +1,12 @@
 # TODO: Automatizar o sistema de visualização de arquivos (Organizador e Renomeador)
 
-# TODO: Impedir que uma imagem receba o nome de outra (Renomeador)
+# TODO: Adicionar campos para remover espaçamento ou modificar o simbolo usado com o contador (Renomeador)
 
 # TODO: Adicionar um campo com a pasta de destino dos arquivos (Organizador)
-#   Se o nome for vazio, entra direto na pasta de destino
-#   Caso tenha nome, a pasta é criada nessa pasta de destino
-#   Usar números negativos para voltar na rota e extair os dados
+#   [] Se o nome for vazio, entra direto na pasta de destino
+#   [] Caso tenha nome, a pasta é criada nessa pasta de destino
+#   [] Usar números negativos para voltar na rota e extair os dados
 
-# TODO: Adicionar campos para remover espaçamento ou modificar o simbolo usado com o contador (Renomeador)
 
 import os
 import re

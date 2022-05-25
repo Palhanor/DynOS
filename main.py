@@ -1,3 +1,8 @@
+"""
+@author Lucas Palhano
+@github palhanor
+"""
+
 import os
 import re
 import shutil
@@ -157,6 +162,13 @@ while True:
                         rota = os.path.join(diretorio_arquivos_selecionados, arquivo)
                         new_file = f'{nome} #{str(contador).zfill(3)}' + formato
                         new_path = os.path.join(diretorio_arquivos_selecionados, new_file)
+                        while True:
+                            if os.path.isfile(new_path):
+                                contador += 1
+                                new_file = f'{nome} #{str(contador).zfill(3)}' + formato
+                                new_path = os.path.join(diretorio_arquivos_selecionados, new_file)
+                            else:
+                                break
                         os.rename(rota, new_path)
                         contador += 1
                 window['-SAIDA-RENOMEADOR-'].Update('')
